@@ -1,0 +1,39 @@
+input {
+
+	width:30em;
+	background: white;
+	color: black;
+}
+
+img {
+	width: 500px;
+}
+.footer-hr {
+	border: 0.3px solid grey;
+}
+#footer-box {
+  background: #EEEEEE; 
+}
+
+.lista-icones {
+	
+	margin-left: 50px;
+}
+
+.tabelacontato {
+
+	font-style: Helvetica, sans-serif;
+}
+
+.tabelacontato h4 {
+
+	color: #244449;
+	font-size: 1.5em;
+}
+
+.tabelacontato h5 {
+
+	color: #244449;
+	font-size: 1em;
+}
+

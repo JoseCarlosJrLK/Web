@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block container %}
+<body>
+	<div class="container">
+			
+		<div class="row justify-content-sm-center">
+			
+			<h2 class="mt-3">Para realizar o teste, registri-se por favor.</h2>
+
+			<div class="col-sm-6">
+
+				<div class="card mt-5 mb-5">
+
+					<div class="card-body text-left">
+
+						<h4 class="card-title"><b>Cadastre-se:</b></h4>
+
+						<form class="ajuste">
+							{% csrf_token %}
+							<fieldset>
+								{% for field in form %}
+								<div class="form-group ">
+									{{ field.label_tag }}
+									{{ field }}
+									{{ field.errors }}
+								</div>
+								{% endfor %}
+								
+								<button type="submit" class="btn btn-primary">Cadastrar</button>
+							</fieldset>
+						</form>
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+		</div>
+
+	</div>
+</body>
+{% endblock %}
