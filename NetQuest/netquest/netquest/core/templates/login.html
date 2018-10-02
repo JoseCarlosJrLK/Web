@@ -17,16 +17,18 @@
 
 						<h4 class="card-title"><b>Se já é registrado acesse:</b></h4>
 
-						<form class="ajuste">
+						<form class="ajuste" action="{% url 'login' %}" method="POST">
 							{% csrf_token %}
-							<fieldset>
-								{% for field in form %}
-								<div class="form-group ">
-									{{ field.label_tag }}
-									{{ field }}
-									{{ field.errors }}
+							<div class="form-row">
+								<div class="form-group col-md-12">
+								  <label>Usuario</label>
+								  <input type="text" class="form-control" name="username" placeholder='Usuario'>
 								</div>
-								{% endfor %}
+								<div class="form-group col-md-12">
+								  <label>Password</label>
+								  <input type="password" class="form-control" name="password" placeholder="*****">
+								</div>
+							</div>
 								
 								<button type="submit" class="btn btn-primary mr-5">Entrar</button>
 								<a class="ml-5 text-left" href="cadastro">Ainda não é Cadastrado?</a>
