@@ -11,7 +11,7 @@ class UserManager(models.Manager):
 class User(models.Model):
 	
 	matricula = models.BigIntegerField('Matricula')
-	nome = models.CharField('Nome', max_length=100)
+	nome = models.CharField('Nome', max_length=100, null=True)
 	email = models.EmailField('Email', max_length=100, null=False)
 	password = models.CharField('PassWord', max_length=30)
 
@@ -28,5 +28,11 @@ class User(models.Model):
 		verbose_name = 'Usuario'
 		verbose_name_plural = "Usuarios"
 		ordering = ['matricula']
-		
-			
+
+
+class Quest(models.Model):
+	
+	pergunta = models.CharField('Pergunta', max_length=255, blank=False, null=True)
+	quest1 = models.CharField('Questao01', max_length=255, blank=False, null=False)
+	quest2 = models.CharField('Questao02', max_length=255, blank=False, null=False)
+	quest3 = models.CharField('Questao03', max_length=255, blank=False, null=False)

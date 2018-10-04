@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from .forms import UserLogin
-from .forms import UserModelForm
+from .forms import UserLogin, UserModelForm, Questionario
 from django.contrib.auth import authenticate, login, logout 
 from django.contrib.auth.decorators import login_required
+from django.core.serializers import serialize
+from django.http import HttpResponse
+import csv
 
 
 # Create your views here.
@@ -28,7 +30,11 @@ def contato(request):
 
 @login_required
 def netquest(request):
-	return render(request, 'questionario.html')
+	form = Questionario
+	context = {'form':form}
+
+	return render ('questionario.html', context)
+
 
 def cadastro(request):
 	
