@@ -32,8 +32,7 @@ def contato(request):
 def netquest(request):
 	form = Questionario
 	context = {'form':form}
-
-	return render ('questionario.html', context)
+	return render (request,'questionario3.html', context)
 
 
 def cadastro(request):

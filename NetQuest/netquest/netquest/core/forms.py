@@ -40,7 +40,7 @@ class Questionario(forms.ModelForm):
 		model = Quest
 		fields = ('pergunta','quest1','quest2','quest3')
 		widgets = {
-			'pergunta': forms.TextInput(attrs={'class':'text-dark'}),
+			'pergunta' : forms.TextInput(attrs={'class':'text-dark'}),
 			'Chkquest1': forms.TextInput(attrs={'class':'form-check-input', 'type':'checkbox', 'name':'quest1'}),
 			'quest1': forms.TextInput(attrs={'class':'text-dark form-check-label'}),
 			'Chkquest2': forms.TextInput(attrs={'class':'form-check-input', 'type':'checkbox', 'name':'quest2'}),

@@ -3,21 +3,25 @@
 
 {% block container %}
 
-	<form class="ajuste" action="{% url 'netquest' %}" method="GET">
-		<div class="form-check mb-2 mx-4">
-			{% for qt in form %}
-		  		{{ qt.id }}
-		  		{{ qt.pergunta }}
-		  		{{qt.Chkquest1}}
-				{{qt.quest1}}
-				{{qt.Chkquest2}}
-				{{qt.quest2}}
-				{{qt.Chkquest3}}
-				{{qt.quest3}}
-		  
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<form class="ajuste my-5" action="{% url 'netquest' %}" method="GET">
+					{% csrf_token %}
+					<fieldset>
+						{% for field in form %}
+						<div class="form-group ">
+							{{ field.label_tag }}
+							 <label></label>
+							 {{ field.content | linebreaks }}
+							{{ field.errors}}
+						</div>
+						{% endfor %}
+						<button type="submit" class="btn btn-primary">Cadastrar</button>
+					</fieldset>
+				</form>
+			</div>
 		</div>
-			{% endfor %}
-		<button type="submit" class="btn btn-primary mr-5">OK</button>
-	</form>
+	</div>
 	
 {% endblock %}
